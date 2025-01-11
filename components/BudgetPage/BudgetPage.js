@@ -62,7 +62,7 @@ const BudgetPage = () => {
         setTimeout(() => {
           setShowProfile(false);
         }, 1000);
-      }, 5000);
+      }, 6000);
     }
   }, [isAuthenticated]);
 
