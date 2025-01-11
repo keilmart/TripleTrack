@@ -44,7 +44,7 @@ const Nav = () => {
 
   const navigation = [
     { name: "Home", href: "/#", isActive: router.pathname === "/" },
-    { name: "About", href: "/about", isActive: router.pathname === "/about" },
+    { name: "Budget", href: "/budget", isActive: router.pathname === "/budget" },
   ];
 
   return (

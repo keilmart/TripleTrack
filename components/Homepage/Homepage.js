@@ -40,7 +40,7 @@ const Homepage = ({
         <Hero />
       </FadeIn>
 
-      <FadeIn>
+      {/* <FadeIn>
         <section className="mx-auto mb-11 md:mb-16 lg:mb-20">
           <SectionHeader
             title="My Toolbox"
@@ -51,9 +51,9 @@ const Homepage = ({
           <HomepageSkillsList />
           <a id="featured" />
         </section>
-      </FadeIn>
+      </FadeIn> */}
 
-      <FadeIn>
+      {/* <FadeIn>
         <section className="mx-auto mb-11 md:mb-20">
           <SectionHeader
             title="Featured Work"
@@ -67,9 +67,9 @@ const Homepage = ({
           <div className="pt-6 md:pt-11" />
           <HomepageFeaturedList projects={featuredProjects} />
         </section>
-      </FadeIn>
+      </FadeIn> */}
 
-      <FadeIn>
+      {/* <FadeIn>
         <section className="mx-auto mb-6">
           <SectionHeader
             title="Testimonials"
@@ -80,9 +80,9 @@ const Homepage = ({
           <HomepageTestimonialList />
           <a id="notable" />
         </section>
-      </FadeIn>
+      </FadeIn> */}
 
-      <FadeIn>
+      {/* <FadeIn>
         <section className="mx-auto mb-11 md:mb-20">
           <SectionHeader
             title="Notable Work"
@@ -92,9 +92,9 @@ const Homepage = ({
           <div className="pt-6 md:pt-11" />
           <HomepageNotableList projects={notableProjects} />
         </section>
-      </FadeIn>
+      </FadeIn> */}
 
-      <FadeIn>
+      {/* <FadeIn>
         <section className="mx-auto mb-11 md:mb-20">
           <SectionHeader
             title="Launching Soon"
@@ -104,7 +104,7 @@ const Homepage = ({
           <div className="pt-6 md:pt-11" />
           <HomepageComingList projects={comingProjects} />
         </section>
-      </FadeIn>
+      </FadeIn> */}
     </>
   );
 };

@@ -13,10 +13,8 @@ function MyApp({ Component, pageProps }) {
     <>
       {isBrowser ? (
         <Auth0Provider
-          // domain={process.env.AUTH0_PUBLIC_DOMAIN}
-          // clientId={process.env.AUTH0_PUBLIC_CLIENT_ID}
-          domain="keilmart.us.auth0.com"
-          clientId="GUC8ADXxT3GAZ633l1eMafCKLgx4ZBYs"
+          domain={process.env.AUTH0_PUBLIC_DOMAIN}
+          clientId={process.env.AUTH0_PUBLIC_CLIENT_ID}
           authorizationParams={{
             redirect_uri: window.location.origin, // Ensures proper redirect URI
           }}>
@@ -31,7 +29,6 @@ function MyApp({ Component, pageProps }) {
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Nav />
           <Component {...pageProps} />
-
           <Footer />
         </ThemeProvider>
       )}
