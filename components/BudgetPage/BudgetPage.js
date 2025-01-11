@@ -142,7 +142,7 @@ const BudgetPage = () => {
     <Layout wide={true}>
       <div className="flex">
         <TabButton tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
-        <div className="p-8 text-xl antialiased leading-relaxed tracking-tight border-t md:my-18 text-tertiary border-primary dark:border-b-0 ">
+        <div className="w-full p-8 text-xl antialiased leading-relaxed tracking-tight border-t md:my-18 text-tertiary border-primary dark:border-b-0 ">
           {renderActiveTabContent()}
         </div>
       </div>

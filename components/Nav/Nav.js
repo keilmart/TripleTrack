@@ -72,7 +72,7 @@ const Nav = () => {
                     className={`text-base antialiased tracking-tight sm:text-lg font-montserrat tracking dark:tracking-normal ${
                       router.pathname === "/budget" ? "" : ""
                     }`}>
-                    {router.pathname === "/budget" ? <>TripleTrack</> : <>TripleByte</>}
+                    TripleTrack
                   </span>
                 </div>
               </a>
