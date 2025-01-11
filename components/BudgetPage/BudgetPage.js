@@ -68,7 +68,7 @@ const BudgetPage = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-[83vh]">
+      <div className="flex items-center justify-center w-full mb-10">
         <div className="spinner"></div>
       </div>
     );
@@ -139,13 +139,12 @@ const BudgetPage = () => {
   };
 
   return (
-    <Layout wide={true}>
-      <div className="flex">
-        <TabButton tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
-        <div className="w-full p-8 text-xl antialiased leading-relaxed tracking-tight border-t md:my-18 text-tertiary border-primary dark:border-b-0 ">
-          {renderActiveTabContent()}
-        </div>
+    <>
+      <TabButton tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+      <div className="w-full p-8 text-xl antialiased leading-relaxed tracking-tight md:my-18 text-tertiary">
+        {renderActiveTabContent()}
       </div>
+
       {showProfile && (
         <div
           className={`absolute top-0 left-0 flex items-center justify-center w-full h-screen backdrop-blur-md transition-opacity duration-1000 ${
@@ -154,7 +153,7 @@ const BudgetPage = () => {
           <Profile />
         </div>
       )}
-    </Layout>
+    </>
   );
 };
 

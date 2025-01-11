@@ -19,17 +19,21 @@ function MyApp({ Component, pageProps }) {
             redirect_uri: window.location.origin, // Ensures proper redirect URI
           }}>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-            <Nav />
-            <Component {...pageProps} />
-            <Footer />
+            <div className="flex flex-col min-h-screen">
+              <Nav />
+              <Component {...pageProps} />
+              <Footer />
+            </div>
           </ThemeProvider>
         </Auth0Provider>
       ) : (
         // Render without Auth0Provider during SSR
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <Nav />
-          <Component {...pageProps} />
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <Nav />
+            <Component {...pageProps} />
+            <Footer />
+          </div>
         </ThemeProvider>
       )}
     </>

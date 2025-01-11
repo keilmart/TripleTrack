@@ -14,9 +14,12 @@ const Layout = ({ children, wide = false }) => {
       animate="enter"
       exit="exit"
       transition={{ type: "linear", duration: 0.5 }}
-      className="w-full h-full overflow-x-hidden bg-white dark:bg-darkMode">
-      <div className={`mx-auto ${wide ? "" : "container max-w-screen-xl"}`}>
-        <div className={`${wide ? "" : "px-4 lg:px-8"}`}>{children}</div>
+      className="flex items-center justify-center flex-grow bg-white dark:bg-darkMode">
+      <div
+        className={`${
+          wide ? "flex w-full" : "mx-auto container max-w-screen-xl px-4 lg:px-8"
+        }`}>
+        {children}
       </div>
     </motion.main>
   );

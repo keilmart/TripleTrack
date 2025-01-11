@@ -19,8 +19,8 @@ const Hero = () => {
         <Image
           src="/pictures/promo.png"
           alt="promo image"
-          height="400"
-          width="570"
+          height="600"
+          width="850"
           className="rounded-lg"
         />
       </div>

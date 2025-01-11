@@ -54,24 +54,17 @@ const Nav = () => {
       }`}>
       <div className="relative">
         <div
-          className={`flex items-center justify-between w-full px-2.5 py-3 mx-auto sm:px-4 transition-all duration-500 ease-in-out ${
+          className={`flex items-center justify-between w-full px-2.5 py-3 mx-auto sm:px-4 transition-all duration-500 ease-in-out border-primary dark:border-black border-b ${
             router.pathname === "/budget"
               ? "xl:px-12"
               : "container max-w-screen-xl lg:px-8 "
           }`}>
-          {router.pathname === "/budget" && (
-            <div className="absolute left-0 h-full w-96 bg-syncWave dark:bg-darkModeDetail"></div>
-          )}
-          {/* Logo Section */}
           <div className="z-10 flex flex-row items-center justify-center text-sm antialiased font-semibold leading-3 tracking-wide text-primary dark:text-slate-200">
             <Link href="/">
               <a className="flex">
-                {router.pathname != "/budget" && <CircleIcon />}
+                <CircleIcon />
                 <div className="flex items-center justify-center pl-navX pt-navY">
-                  <span
-                    className={`text-base antialiased tracking-tight sm:text-lg font-montserrat tracking dark:tracking-normal ${
-                      router.pathname === "/budget" ? "" : ""
-                    }`}>
+                  <span className="text-base antialiased tracking-tight sm:text-lg font-montserrat tracking dark:tracking-normal">
                     TripleTrack
                   </span>
                 </div>
