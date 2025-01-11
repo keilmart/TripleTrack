@@ -17,7 +17,9 @@ const Layout = ({ children, wide = false }) => {
       className="flex items-center justify-center flex-grow bg-white dark:bg-darkMode">
       <div
         className={`${
-          wide ? "flex w-full" : "mx-auto container max-w-screen-xl px-4 lg:px-8"
+          wide
+            ? "flex w-full flex-grow h-full"
+            : "mx-auto container max-w-screen-xl px-4 lg:px-8"
         }`}>
         {children}
       </div>

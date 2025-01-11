@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+
 import { useAuth0 } from "@auth0/auth0-react";
 import { getGoogleSheetData } from "../../lib/dataFetch";
-import Layout from "../../components/Layout/Layout";
+
 import Profile from "../../components/Auth/Profile";
 import BudgetSection from "./BudgetSection";
 import TabButton from "./TabButton";
+import RenderTransition from "./RenderTransition";
 
 const BudgetPage = () => {
   const { isAuthenticated } = useAuth0();
@@ -78,18 +80,20 @@ const BudgetPage = () => {
     switch (activeTab) {
       case "categories":
         return (
-          <BudgetSection
-            data={categoriesTab}
-            showPieChart={true}
-            showBarGraph={false}
-            legend={true}
-            sectionTitle="Categories"
-            filterCondition={(row) =>
-              row.Difference !== "" &&
-              row["Goal Amount"] !== "" &&
-              row.Category.trim() !== ""
-            }
-          />
+          <div>
+            <BudgetSection
+              data={categoriesTab}
+              showPieChart={true}
+              showBarGraph={false}
+              legend={true}
+              sectionTitle="Categories"
+              filterCondition={(row) =>
+                row.Difference !== "" &&
+                row["Goal Amount"] !== "" &&
+                row.Category.trim() !== ""
+              }
+            />
+          </div>
         );
       case "metrics":
         return (
@@ -111,19 +115,21 @@ const BudgetPage = () => {
         );
       case "singles":
         return (
-          <div className="text-center">
-            <h2 className="text-xl font-bold">Single Expenses</h2>
-            <p>Click here to manually add entry</p>
-            <p>
-              Popup modal with fields to fill in Date, Description, Category, Amount,
-              Split, Total (will calculate automatically)
-            </p>
-            <p>
-              https://skwad.app/blog/is-it-safe-to-connect-your-bank-account-to-budgeting-apps
-            </p>
-            <p>This will be its on repo so dont have to reuse nav and footer</p>
-            <p>https://skwad.app/pricing</p>
-            <p>https://budgetduo.com/</p>
+          <div className="h-full">
+            <div className="text-center">
+              <h2 className="text-xl font-bold">Single Expenses</h2>
+              <p>Click here to manually add entry</p>
+              <p>
+                Popup modal with fields to fill in Date, Description, Category, Amount,
+                Split, Total (will calculate automatically)
+              </p>
+              <p>
+                https://skwad.app/blog/is-it-safe-to-connect-your-bank-account-to-budgeting-apps
+              </p>
+              <p>This will be its on repo so dont have to reuse nav and footer</p>
+              <p>https://skwad.app/pricing</p>
+              <p>https://budgetduo.com/</p>
+            </div>
           </div>
         );
       case "trip":
@@ -139,12 +145,12 @@ const BudgetPage = () => {
   };
 
   return (
-    <>
+    <RenderTransition>
       <TabButton tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
-      <div className="w-full p-8 text-xl antialiased leading-relaxed tracking-tight md:my-18 text-tertiary">
+
+      <div className="w-full p-8 text-xl antialiased leading-relaxed md:my-18 text-tertiary">
         {renderActiveTabContent()}
       </div>
-
       {showProfile && (
         <div
           className={`absolute top-0 left-0 flex items-center justify-center w-full h-screen backdrop-blur-md transition-opacity duration-1000 ${
@@ -153,7 +159,7 @@ const BudgetPage = () => {
           <Profile />
         </div>
       )}
-    </>
+    </RenderTransition>
   );
 };
 
