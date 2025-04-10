@@ -5,12 +5,12 @@ const Footer = () => {
       <div className="container flex justify-between w-full max-w-screen-xl px-4 py-5 mx-auto text-sm font-medium lg:px-8 text-secondary text-primary dark:text-slate-200">
         <div className="flex items-center">
           <span>{currentYear} &nbsp;</span>
-          <span className="hidden sm:block">
+          {/* <span className="hidden sm:block">
             &bull;&nbsp;&nbsp;Built with Next.js, Tailwind and Firestore
-          </span>
+          </span> */}
         </div>
         <div className="flex items-center">
-          <div>
+          {/* <div>
             <a
               target="_blank"
               rel="noreferrer"
@@ -20,7 +20,7 @@ const Footer = () => {
                 Meet me! <span className="hidden sm:inline-block">↗</span>
               </span>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
