@@ -76,21 +76,23 @@ const BudgetPage = () => {
     );
   }
 
+  // console.log("Sheet Data:", sheetData);
+
   const renderActiveTabContent = () => {
     switch (activeTab) {
       case "categories":
         return (
           <div>
             <BudgetSection
-              data={categoriesTab}
+              data={categoriesTab || []}
               showPieChart={true}
               showBarGraph={false}
               legend={true}
               sectionTitle="Categories"
               filterCondition={(row) =>
-                row.Difference !== "" &&
-                row["Goal Amount"] !== "" &&
-                row.Category.trim() !== ""
+                (row.Difference || "") !== "" &&
+                (row["Goal Amount"] || "") !== "" &&
+                (row.Category || "").trim() !== ""
               }
             />
           </div>
@@ -101,14 +103,14 @@ const BudgetPage = () => {
             <p>Compare last month with this month</p>
             <p>Compare yearly monthly average with this month</p>
             <BudgetSection
-              data={metricsTab}
+              data={metricsTab || []}
               showPieChart={false}
               showBarGraph={true}
               legend={false}
               sectionTitle="Yearly Target on Track"
               filterCondition={(row) =>
-                (row["Goal Amount"] === "" || row.Difference === "") &&
-                row.Category.trim() !== ""
+                ((row["Goal Amount"] || "") === "" || (row.Difference || "") === "") &&
+                (row.Category || "").trim() !== ""
               }
             />
           </>

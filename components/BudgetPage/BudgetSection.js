@@ -20,6 +20,8 @@ const BudgetSection = ({
     return { value, class: "" };
   };
 
+  // console.log("BudgetSection Data:", data);
+
   return (
     <div className="w-full">
       <h2 className="mt-6 mb-4 text-xl font-semibold md:text-3xl">{sectionTitle}</h2>
@@ -38,7 +40,7 @@ const BudgetSection = ({
       <div className="grid grid-cols-2 gap-6">
         {data
           .filter(filterCondition)
-          .filter((row) => row.Category.trim() !== "")
+          .filter((row) => (row.Category || "").trim() !== "")
           .map((row, index) => (
             <div
               key={index}
