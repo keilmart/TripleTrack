@@ -8,10 +8,13 @@ const PieChartComponent = ({ percentageUsed, pieChartCategory }) => {
     { name: "Remaining", value: remainder },
   ];
 
-  // console.log("Pie Chart Data:", data, pieChartCategory);
+  console.log("Pie Chart Data:", data, pieChartCategory);
 
   return (
-    <ResponsiveContainer width="50%" height={180}>
+    // <ResponsiveContainer width="50%" height={180}>
+    // <div className="relative w-full h-full">
+    <ResponsiveContainer width="100%" height="100%">
+      {/* <div className="w-full h-60"> */}
       <PieChart>
         <Pie data={data} dataKey="value" nameKey="name" outerRadius={80} fill="#8884d8">
           {data.map((entry, index) => (
@@ -19,7 +22,10 @@ const PieChartComponent = ({ percentageUsed, pieChartCategory }) => {
           ))}
         </Pie>
       </PieChart>
+      {/* </div> */}
+      {/* <div className="absolute top-1/2 left-1/2">Percentage?</div> */}
     </ResponsiveContainer>
+    // </div>
   );
 };
 

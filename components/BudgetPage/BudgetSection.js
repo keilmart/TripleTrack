@@ -44,13 +44,15 @@ const BudgetSection = ({
           .map((row, index) => (
             <div
               key={index}
-              className="flex justify-between py-10 mb-6 transition duration-500 ease-in-out bg-gray-100 rounded-lg px-7 hover:shadow-lg hover:scale-105 dark:bg-darkModeDetail">
+              className="flex flex-col-reverse py-10 mb-6 transition duration-500 ease-in-out bg-gray-100 rounded-lg sm:justify-between sm:flex-row px-7 hover:shadow-lg hover:scale-105 dark:bg-darkModeDetail">
               <div>
                 <p className="text-2xl font-semibold">{row.Category}</p>
                 {row["Goal Amount"] !== "" && (
                   <p
                     className={`${
-                      row["Goal Amount"] < 0 ? "text-red-400" : "text-black"
+                      row["Goal Amount"] < 0
+                        ? "text-red-400"
+                        : "text-black dark:text-yellow-50"
                     }`}>
                     <strong className="display-text-group">Goal Amount:</strong> $
                     {formatValue(row["Goal Amount"]).value}
@@ -60,7 +62,7 @@ const BudgetSection = ({
                   <p
                     className={`${
                       row["Total Amount"] < row["Goal Amount"]
-                        ? "text-green-400"
+                        ? "text-green-600 dark:text-green-400"
                         : "text-red-400"
                     }`}>
                     <strong className="display-text-group">Total Amount: </strong> $
@@ -70,7 +72,9 @@ const BudgetSection = ({
                 {row["Difference"] !== "" && (
                   <p
                     className={`${
-                      row["Difference"] < 0 ? "text-red-400" : "text-green-400"
+                      row["Difference"] < 0
+                        ? "text-red-400"
+                        : "text-green-600 dark:text-green-400"
                     }`}>
                     <strong className="display-text-group">Difference:</strong> $
                     {formatValue(row["Difference"]).value}
@@ -81,7 +85,7 @@ const BudgetSection = ({
                     className={`${
                       row["Total Amount"] > row["Goal Amount"]
                         ? "text-red-400"
-                        : "text-green-400"
+                        : "text-green-600 dark:text-green-400"
                     }`}>
                     <strong className="display-text-group">Percentage:</strong>{" "}
                     {((row["Total Amount"] / row["Goal Amount"]) * 100).toFixed(0)}%
