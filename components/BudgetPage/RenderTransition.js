@@ -14,8 +14,8 @@ const RenderTransition = ({ children }) => {
       animate="enter"
       exit="exit"
       transition={{ type: "linear", duration: 0.5 }}
-      className="flex items-center justify-center bg-white dark:bg-darkMode">
-      <div className="flex flex-grow w-full">{children}</div>
+      className="flex items-center justify-center w-full bg-white dark:bg-darkMode">
+      <div className="flex flex-col flex-grow w-full lg:flex-row">{children}</div>
     </motion.div>
   );
 };

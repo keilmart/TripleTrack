@@ -76,13 +76,13 @@ const BudgetPage = () => {
     );
   }
 
-  // console.log("Sheet Data:", sheetData);
+  // console.log("Sheet Data:", categoriesTab);
 
   const renderActiveTabContent = () => {
     switch (activeTab) {
       case "categories":
         return (
-          <div>
+          <div className="w-full">
             <BudgetSection
               data={categoriesTab || []}
               showPieChart={true}

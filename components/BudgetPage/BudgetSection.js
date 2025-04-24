@@ -37,7 +37,7 @@ const BudgetSection = ({
           </div>
         </div>
       )}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
         {data
           .filter(filterCondition)
           .filter((row) => (row.Category || "").trim() !== "")
@@ -47,22 +47,24 @@ const BudgetSection = ({
               className="flex justify-between py-10 mb-6 transition duration-500 ease-in-out bg-gray-100 rounded-lg px-7 hover:shadow-lg hover:scale-105 dark:bg-darkModeDetail">
               <div>
                 <p className="text-2xl font-semibold">{row.Category}</p>
-                {row["Total Amount"] !== "" && (
-                  <p
-                    className={`${
-                      row["Total Amount"] < 0 ? "text-red-400" : "text-green-400"
-                    }`}>
-                    <strong className="display-text-group">Total Amount: </strong> $
-                    {formatValue(row["Total Amount"]).value}
-                  </p>
-                )}
                 {row["Goal Amount"] !== "" && (
                   <p
                     className={`${
-                      row["Goal Amount"] < 0 ? "text-red-400" : "text-green-400"
+                      row["Goal Amount"] < 0 ? "text-red-400" : "text-black"
                     }`}>
                     <strong className="display-text-group">Goal Amount:</strong> $
                     {formatValue(row["Goal Amount"]).value}
+                  </p>
+                )}
+                {row["Total Amount"] !== "" && (
+                  <p
+                    className={`${
+                      row["Total Amount"] < row["Goal Amount"]
+                        ? "text-green-400"
+                        : "text-red-400"
+                    }`}>
+                    <strong className="display-text-group">Total Amount: </strong> $
+                    {formatValue(row["Total Amount"]).value}
                   </p>
                 )}
                 {row["Difference"] !== "" && (
@@ -74,14 +76,15 @@ const BudgetSection = ({
                     {formatValue(row["Difference"]).value}
                   </p>
                 )}
-                {row["Percentage Used"] !== "" && (
+                {row["Total Amount"] !== "" && row["Goal Amount"] !== "" && (
                   <p
                     className={`${
-                      row["Percentage Used"] < 0 ? "text-red-400" : "text-green-400"
+                      row["Total Amount"] > row["Goal Amount"]
+                        ? "text-red-400"
+                        : "text-green-400"
                     }`}>
-                    <strong className="display-text-group">Percentage Used:</strong>
-                    {""} {""}
-                    {formatValue(row["Percentage Used"]).value}%
+                    <strong className="display-text-group">Percentage:</strong>{" "}
+                    {((row["Total Amount"] / row["Goal Amount"]) * 100).toFixed(0)}%
                   </p>
                 )}
                 {Object.entries(row)
@@ -107,7 +110,11 @@ const BudgetSection = ({
               </div>
               {showPieChart && (
                 <PieChartComponent
-                  percentageUsed={formatValue(row["Percentage Used"]).value}
+                  pieChartCategory={row.Category}
+                  percentageUsed={(
+                    (row["Total Amount"] / row["Goal Amount"]) *
+                    100
+                  ).toFixed(0)}
                 />
               )}
               {showBarGraph && (

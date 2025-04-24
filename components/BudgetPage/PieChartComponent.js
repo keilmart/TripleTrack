@@ -1,12 +1,14 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
-const PieChartComponent = ({ percentageUsed }) => {
+const PieChartComponent = ({ percentageUsed, pieChartCategory }) => {
   const numericPercentage = Math.min(Math.max(Number(percentageUsed), 0), 100);
   const remainder = 100 - numericPercentage;
   const data = [
     { name: "Used", value: numericPercentage },
     { name: "Remaining", value: remainder },
   ];
+
+  // console.log("Pie Chart Data:", data, pieChartCategory);
 
   return (
     <ResponsiveContainer width="50%" height={180}>
