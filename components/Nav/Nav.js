@@ -73,22 +73,23 @@ const Nav = () => {
           </div>
 
           <div className="flex items-center">
-            <div className="space-x-2.5 sm:space-x-5 hidden sm:flex">
+            {/* <div className="space-x-2.5 sm:space-x-5 hidden sm:flex">
               {navigation.map((item) => (
                 <NavItem item={item} key={item.name} />
               ))}
-            </div>
+            </div> */}
             <div className="flex ml-3 sm:ml-5">
               <ThemeToggle />
             </div>
 
             <div className="ml-4">
-              {!isAuthenticated && isClient && (
+              {!isAuthenticated && isClient && router.pathname !== "/budget" && (
                 <button
                   onClick={() => {
-                    const redirectUrl = "http://localhost:3000/budget"; // Hardcoded for testing
-                    console.log("Redirect URL:", redirectUrl); // Log the redirect URL
-                    loginWithRedirect({ redirect_uri: redirectUrl }); // Call the login redirect
+                    // const redirectUrl = "http://localhost:3000/budget"; // Hardcoded for testing
+                    // console.log("Redirect URL:", redirectUrl); // Log the redirect URL
+                    // loginWithRedirect({ redirect_uri: redirectUrl }); // Call the login redirect
+                    router.push("/budget"); // TEMPORARY: Just redirect to /budget
                   }}
                   className="btn-primary primary-grad">
                   Sign In
