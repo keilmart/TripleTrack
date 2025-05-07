@@ -14,7 +14,8 @@ const Layout = ({ children, wide = false }) => {
       animate="enter"
       exit="exit"
       transition={{ type: "linear", duration: 0.5 }}
-      className="flex items-center justify-center flex-grow bg-white dark:bg-darkMode">
+      className="flex items-center justify-center flex-grow w-full h-full min-h-screen bg-white dark:bg-darkMode">
+      {/* <div> */}
       <div
         className={`${
           wide

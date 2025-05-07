@@ -148,11 +148,13 @@ const BudgetPage = () => {
 
   return (
     <RenderTransition>
+      {/* <div className="flex w-full h-full"> */}
       <TabButton tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
 
       <div className="w-full p-8 text-xl antialiased leading-relaxed md:my-18 text-tertiary">
         {renderActiveTabContent()}
       </div>
+      {/* </div> */}
       {showProfile && (
         <div
           className={`absolute top-0 left-0 flex items-center justify-center w-full h-screen backdrop-blur-md transition-opacity duration-1000 ${
