@@ -83,6 +83,13 @@ const BudgetPage = () => {
       case "categories":
         return (
           <div className="w-full">
+            <p>
+              Setup and train AI that you can just copy and paste the monthly amount and
+              it auto categorizes, if it does not know it asks you where to assign it
+            </p>
+            <p>
+              Add a section where you can some how accomadte for split costs with lisa
+            </p>
             <BudgetSection
               data={categoriesTab || []}
               showPieChart={true}
@@ -119,6 +126,9 @@ const BudgetPage = () => {
         return (
           <div className="h-full">
             <div className="text-center">
+              <p>
+                Drop down menus of what category, what the amount is, then it adds it in
+              </p>
               <h2 className="text-xl font-bold">Single Expenses</h2>
               <p>Click here to manually add entry</p>
               <p>
