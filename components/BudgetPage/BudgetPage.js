@@ -22,7 +22,7 @@ const BudgetPage = () => {
     { key: "categories", label: "Categories" },
     { key: "metrics", label: "Overall Metrics" },
     { key: "singles", label: "Single expenses" },
-    { key: "trip", label: "Trip Fund" },
+    // { key: "trip", label: "Trip Fund" },
   ];
 
   useEffect(() => {
@@ -118,6 +118,48 @@ const BudgetPage = () => {
       case "singles":
         return (
           <div className="h-full">
+            <div className="text-center">
+              <h2 className="text-xl font-bold">Single Expenses</h2>
+              <p>Click here to manually add entry</p>
+              <p>
+                Popup modal with fields to fill in Date, Description, Category, Amount,
+                Split, Total (will calculate automatically)
+              </p>
+              <p>
+                https://skwad.app/blog/is-it-safe-to-connect-your-bank-account-to-budgeting-apps
+              </p>
+              <p>This will be its on repo so dont have to reuse nav and footer</p>
+              <p>https://skwad.app/pricing</p>
+              <p>https://budgetduo.com/</p>
+            </div>
+            <div className="text-center">
+              <h2 className="text-xl font-bold">Single Expenses</h2>
+              <p>Click here to manually add entry</p>
+              <p>
+                Popup modal with fields to fill in Date, Description, Category, Amount,
+                Split, Total (will calculate automatically)
+              </p>
+              <p>
+                https://skwad.app/blog/is-it-safe-to-connect-your-bank-account-to-budgeting-apps
+              </p>
+              <p>This will be its on repo so dont have to reuse nav and footer</p>
+              <p>https://skwad.app/pricing</p>
+              <p>https://budgetduo.com/</p>
+            </div>
+            <div className="text-center">
+              <h2 className="text-xl font-bold">Single Expenses</h2>
+              <p>Click here to manually add entry</p>
+              <p>
+                Popup modal with fields to fill in Date, Description, Category, Amount,
+                Split, Total (will calculate automatically)
+              </p>
+              <p>
+                https://skwad.app/blog/is-it-safe-to-connect-your-bank-account-to-budgeting-apps
+              </p>
+              <p>This will be its on repo so dont have to reuse nav and footer</p>
+              <p>https://skwad.app/pricing</p>
+              <p>https://budgetduo.com/</p>
+            </div>
             <div className="text-center">
               <h2 className="text-xl font-bold">Single Expenses</h2>
               <p>Click here to manually add entry</p>
